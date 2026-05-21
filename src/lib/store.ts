@@ -1,5 +1,6 @@
 import { create } from "zustand";
 import { moduleMap, type ModuleId } from "./modules";
+import { event } from "./analytics";
 
 export interface WindowState {
   id: ModuleId;
@@ -58,10 +59,14 @@ export const useOS = create<OSState>((set, get) => ({
 
   setPhilosophy: (open) => set({ philosophyOpen: open }),
   setTransmission: (open) => set({ transmissionOpen: open }),
-  openCaseStudy: (id) => set({ caseStudyOpen: id, paletteOpen: false }),
+  openCaseStudy: (id) => {
+    event("open_case_study", { id });
+    set({ caseStudyOpen: id, paletteOpen: false });
+  },
   closeCaseStudy: () => set({ caseStudyOpen: null }),
 
   openModule: (id) => {
+    event("open_module", { module: id });
     if (id === "philosophy") {
       set({ philosophyOpen: true, paletteOpen: false });
       return;

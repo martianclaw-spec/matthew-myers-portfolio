@@ -5,6 +5,7 @@ import { Check, Circle, ArrowUpRight } from "lucide-react";
 import { projects, statusLabel } from "@/lib/data/projects";
 import { caseStudies } from "@/lib/data/caseStudies";
 import { useOS } from "@/lib/store";
+import { event } from "@/lib/analytics";
 import { ModuleShell, SectionLabel, Chip, Panel } from "@/components/ui/primitives";
 import { cn } from "@/lib/utils";
 
@@ -137,6 +138,7 @@ export function Projects() {
                   href={project.liveUrl}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => event("visit_live_site", { project: project.id })}
                   className="group inline-flex items-center gap-2 rounded-lg border border-line bg-bg-base/50 px-4 py-2 text-sm text-ink-muted transition hover:border-accent/40 hover:text-ink"
                 >
                   Visit live site

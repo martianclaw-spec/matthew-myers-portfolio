@@ -5,6 +5,7 @@ import { motion, useReducedMotion, useScroll, useSpring } from "framer-motion";
 import { X, ChevronDown, ArrowRight, Boxes, ExternalLink } from "lucide-react";
 import { caseStudies } from "@/lib/data/caseStudies";
 import { useOS } from "@/lib/store";
+import { event } from "@/lib/analytics";
 import { CaseArchitectureMap } from "./CaseArchitectureMap";
 
 function Reveal({
@@ -167,6 +168,7 @@ export function CaseStudyLayer({ id }: { id: string }) {
                   href={c.liveUrl}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => event("visit_live_site", { project: c.id })}
                   className="group mt-7 inline-flex items-center gap-2 rounded-lg border border-accent/50 bg-accent/10 px-5 py-2.5 text-sm font-medium text-accent transition hover:bg-accent/15"
                 >
                   <ExternalLink className="h-4 w-4" />

@@ -15,6 +15,7 @@ import {
 import { useOS } from "@/lib/store";
 import { openingMessage, recruiterPrompts } from "@/lib/data/knowledge";
 import { detectProjectRefs, type ProjectRef } from "@/lib/projectRefs";
+import { event } from "@/lib/analytics";
 import { cn } from "@/lib/utils";
 
 interface ChatMessage {
@@ -95,6 +96,7 @@ export function AskMatthew() {
     if (!question || loading) return;
 
     setInput("");
+    event("recruiter_question");
     setMessages((m) => [...m, { id: nextId(), role: "user", content: question }]);
     setLoading(true);
 
