@@ -10,11 +10,13 @@ import {
   ServerCog,
   Gauge,
   Bot,
+  Route,
   type LucideIcon,
 } from "lucide-react";
 
 export type ModuleId =
   | "overview"
+  | "background"
   | "ask"
   | "philosophy"
   | "projects"
@@ -45,6 +47,15 @@ export const modules: ModuleDef[] = [
     icon: LayoutDashboard,
     command: "open overview",
     defaultSize: { w: 760, h: 560 },
+  },
+  {
+    id: "background",
+    title: "Operator Background",
+    short: "Background",
+    description: "Why I build operational, customer-aware software.",
+    icon: Route,
+    command: "open background",
+    defaultSize: { w: 780, h: 600 },
   },
   {
     id: "ask",

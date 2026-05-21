@@ -8,11 +8,13 @@ import { AIWorkflow } from "@/components/modules/AIWorkflow";
 import { TeamValue } from "@/components/modules/TeamValue";
 import { Skills } from "@/components/modules/Skills";
 import { Contact } from "@/components/modules/Contact";
+import { OperatorBackground } from "@/components/modules/OperatorBackground";
 import { AskMatthewModule } from "@/components/os/AskMatthew";
 
 // "philosophy" and the "case:" studies render as full-screen layers, not windows.
 const registry: Partial<Record<ModuleId, () => React.JSX.Element>> = {
   overview: SystemOverview,
+  background: OperatorBackground,
   ask: AskMatthewModule,
   projects: Projects,
   architecture: ArchitectureMap,

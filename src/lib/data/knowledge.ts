@@ -59,6 +59,18 @@ export const knowledgeBase: KnowledgeSnippet[] = [
     text: "Matthew is strongest at systems and operational thinking: designing how surfaces, services, data, integrations, and even physical hardware connect, and designing for failure modes and production safety. He pairs that with genuine product intuition, deciding what to build, what to defer, and why. His security and operational reasoning on real revenue-bearing systems is his standout signal, well beyond a typical self-taught background.",
   },
   {
+    id: "background",
+    section: "profile",
+    title: "Operator background before engineering",
+    source: "Operator Background",
+    keywords: [
+      "background", "before", "history", "career", "sales", "customer",
+      "operator", "operations", "people", "communication", "nontraditional",
+      "transition", "why technical", "experience before", "past",
+    ],
+    text: "Before building software, Matthew spent more than ten years in sales and customer-facing work. That background is the foundation of how he builds. He understands how people decide, where workflows quietly break, and what makes an experience feel effortless. His technical ability grew out of a desire to solve real operational and human problems, which is why his software comes out operational, workflow-driven, customer-aware, and commercially grounded. The same years made him strong at communication, identifying the real problem worth solving, and wearing many hats, which is exactly what early-stage startups need.",
+  },
+  {
     id: "skills",
     section: "skills",
     title: "Technical stack",
@@ -227,6 +239,7 @@ export const recruiterPrompts: RecruiterPrompt[] = [
   { label: "Product Engineering", question: "What makes Matthew a product engineer?" },
   { label: "Operational Systems", question: "What real-world operational systems has Matthew built?" },
   { label: "Strengths", question: "What are Matthew's strongest skills?" },
+  { label: "Operator Background", question: "What is Matthew's background before engineering?" },
   { label: "Honest Gaps", question: "What are Matthew's honest gaps?" },
 ];
 

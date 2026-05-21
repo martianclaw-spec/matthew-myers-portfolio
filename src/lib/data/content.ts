@@ -64,6 +64,57 @@ export const teamValue: ValueCard[] = [
   { id: "ownership", title: "Ownership Mindset", detail: "I take a problem end to end and treat the outcome as mine." },
 ];
 
+export interface BackgroundPhase {
+  tag: string;
+  period: string;
+  title: string;
+  body: string;
+}
+
+export const operatorBackground = {
+  kicker: "Operator Background",
+  headline:
+    "My technical ability grew out of a desire to solve real operational and human problems.",
+  narrative:
+    "Before I built software, I spent more than ten years in sales and customer-facing work. That is where I learned the parts of engineering you cannot get from a tutorial: how people actually decide, where workflows quietly break, and what makes an experience feel effortless instead of frustrating. When I started building, I was not chasing technology for its own sake. I was trying to remove friction I had felt firsthand. That is why my software comes out operational, workflow-driven, and grounded in how a real business runs.",
+  phases: [
+    {
+      tag: "Operator",
+      period: "10+ years",
+      title: "Customer-facing and sales",
+      body: "A decade close to customers and operations. I learned how people make decisions, how to communicate clearly under pressure, and where day-to-day workflows actually fall apart.",
+    },
+    {
+      tag: "Builder",
+      period: "Transition",
+      title: "Turning friction into software",
+      body: "I started turning operational pain into working products, using AI-native tools to close the distance between an idea and a real system, and verifying that what I shipped actually worked.",
+    },
+    {
+      tag: "Systems Engineer",
+      period: "Now",
+      title: "Operational platforms",
+      body: "Today I design multi-tenant SaaS, distributed systems, and kiosks with the operator's reality built into the architecture. The customer and the floor are part of the system, not an afterthought.",
+    },
+  ] as BackgroundPhase[],
+  strengths: [
+    { title: "Customer empathy", body: "Ten years of reading what people actually need, not just what they ask for." },
+    { title: "Workflow fluency", body: "I lived operational friction firsthand, so I design to remove it." },
+    { title: "Clear communication", body: "I translate between customers, business goals, and systems." },
+    { title: "Operational awareness", body: "I understand how a floor, a venue, and a transaction really run." },
+    { title: "Problem identification", body: "I find the real problem worth solving, not just the obvious one." },
+    { title: "Ownership", body: "Customer-facing work taught me to own the outcome, not just the task." },
+    { title: "Versatility", body: "Comfortable wearing many hats, which is the daily reality of a startup." },
+    { title: "Commercial grounding", body: "I build with revenue, adoption, and real use in mind." },
+  ],
+  engineeringAdds: [
+    "I design interfaces operators actually want to live in.",
+    "I model software around real workflows, not idealized ones.",
+    "I prioritize the friction that actually costs time and money.",
+    "I keep the customer and the business in view while making technical calls.",
+  ],
+};
+
 export interface TelemetrySignal {
   id: string;
   label: string;

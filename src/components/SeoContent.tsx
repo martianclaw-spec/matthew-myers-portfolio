@@ -1,4 +1,10 @@
-import { identity, philosophy, aiWorkflow, teamValue } from "@/lib/data/content";
+import {
+  identity,
+  philosophy,
+  aiWorkflow,
+  teamValue,
+  operatorBackground,
+} from "@/lib/data/content";
 import { projects, statusLabel } from "@/lib/data/projects";
 import { skillGroups } from "@/lib/data/skills";
 import { caseStudies } from "@/lib/data/caseStudies";
@@ -36,6 +42,26 @@ export function SeoContent() {
         <p className="mt-3 text-base leading-relaxed text-ink-muted">
           {aiWorkflow.thesis}
         </p>
+      </section>
+
+      <section className="mt-12" aria-labelledby="background-heading">
+        <h2 id="background-heading" className="text-2xl font-semibold tracking-tight">
+          {operatorBackground.kicker}
+        </h2>
+        <p className="mt-3 text-base font-medium leading-relaxed text-ink">
+          {operatorBackground.headline}
+        </p>
+        <p className="mt-3 text-base leading-relaxed text-ink-muted">
+          {operatorBackground.narrative}
+        </p>
+        <ul className="mt-4 space-y-2">
+          {operatorBackground.strengths.map((s) => (
+            <li key={s.title}>
+              <span className="font-semibold text-ink">{s.title}.</span>{" "}
+              <span className="text-ink-muted">{s.body}</span>
+            </li>
+          ))}
+        </ul>
       </section>
 
       <section className="mt-12" aria-labelledby="projects-heading">
