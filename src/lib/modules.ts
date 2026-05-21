@@ -9,11 +9,13 @@ import {
   Telescope,
   ServerCog,
   Gauge,
+  Bot,
   type LucideIcon,
 } from "lucide-react";
 
 export type ModuleId =
   | "overview"
+  | "ask"
   | "philosophy"
   | "projects"
   | "case:simbook"
@@ -43,6 +45,15 @@ export const modules: ModuleDef[] = [
     icon: LayoutDashboard,
     command: "open overview",
     defaultSize: { w: 760, h: 560 },
+  },
+  {
+    id: "ask",
+    title: "Recruiter Console",
+    short: "Ask Matthew",
+    description: "Ask anything about Matthew's work, skills, and fit.",
+    icon: Bot,
+    command: "ask matthew",
+    defaultSize: { w: 720, h: 640 },
   },
   {
     id: "philosophy",
