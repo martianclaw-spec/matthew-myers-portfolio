@@ -11,12 +11,14 @@ import { WindowFrame } from "./WindowFrame";
 import { ModuleRenderer } from "./ModuleRenderer";
 import { DesktopIdle } from "./DesktopIdle";
 import { PhilosophyLayer } from "./PhilosophyLayer";
+import { TransmissionLayer } from "./TransmissionLayer";
 import { CaseStudyLayer } from "./CaseStudyLayer";
 
 export function OS() {
   const [mounted, setMounted] = useState(false);
   const [showBoot, setShowBoot] = useState(true);
   const [renderPhilosophy, setRenderPhilosophy] = useState(false);
+  const [renderTransmission, setRenderTransmission] = useState(false);
   const [caseId, setCaseId] = useState<string | null>(null);
   const booted = useOS((s) => s.booted);
   const windows = useOS((s) => s.windows);
@@ -24,6 +26,8 @@ export function OS() {
   const setPalette = useOS((s) => s.setPalette);
   const philosophyOpen = useOS((s) => s.philosophyOpen);
   const setPhilosophy = useOS((s) => s.setPhilosophy);
+  const transmissionOpen = useOS((s) => s.transmissionOpen);
+  const setTransmission = useOS((s) => s.setTransmission);
   const caseStudyOpen = useOS((s) => s.caseStudyOpen);
   const closeCaseStudy = useOS((s) => s.closeCaseStudy);
 
@@ -48,6 +52,15 @@ export function OS() {
     return () => clearTimeout(t);
   }, [philosophyOpen]);
 
+  useEffect(() => {
+    if (transmissionOpen) {
+      setRenderTransmission(true);
+      return;
+    }
+    const t = setTimeout(() => setRenderTransmission(false), 620);
+    return () => clearTimeout(t);
+  }, [transmissionOpen]);
+
   // Keep the case study mounted through its close fade, then unmount.
   useEffect(() => {
     if (caseStudyOpen) {
@@ -67,12 +80,13 @@ export function OS() {
       if (e.key === "Escape") {
         setPalette(false);
         setPhilosophy(false);
+        setTransmission(false);
         closeCaseStudy();
       }
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [togglePalette, setPalette, setPhilosophy, closeCaseStudy]);
+  }, [togglePalette, setPalette, setPhilosophy, setTransmission, closeCaseStudy]);
 
   if (!mounted) {
     return <div className="fixed inset-0 z-10 bg-bg-base" />;
@@ -108,6 +122,7 @@ export function OS() {
           <Dock />
           <CommandPalette />
           {renderPhilosophy && <PhilosophyLayer />}
+          {renderTransmission && <TransmissionLayer />}
           {caseId && <CaseStudyLayer id={caseId} />}
         </>
       )}

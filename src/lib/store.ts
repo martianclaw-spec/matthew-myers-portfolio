@@ -17,12 +17,14 @@ interface OSState {
   topZ: number;
   paletteOpen: boolean;
   philosophyOpen: boolean;
+  transmissionOpen: boolean;
   caseStudyOpen: string | null;
   activeProject: string | null;
 
   boot: () => void;
   openModule: (id: ModuleId) => void;
   setPhilosophy: (open: boolean) => void;
+  setTransmission: (open: boolean) => void;
   openCaseStudy: (id: string) => void;
   closeCaseStudy: () => void;
   closeModule: (id: ModuleId) => void;
@@ -48,18 +50,24 @@ export const useOS = create<OSState>((set, get) => ({
   topZ: 10,
   paletteOpen: false,
   philosophyOpen: false,
+  transmissionOpen: false,
   caseStudyOpen: null,
   activeProject: null,
 
   boot: () => set({ booted: true }),
 
   setPhilosophy: (open) => set({ philosophyOpen: open }),
+  setTransmission: (open) => set({ transmissionOpen: open }),
   openCaseStudy: (id) => set({ caseStudyOpen: id, paletteOpen: false }),
   closeCaseStudy: () => set({ caseStudyOpen: null }),
 
   openModule: (id) => {
     if (id === "philosophy") {
       set({ philosophyOpen: true, paletteOpen: false });
+      return;
+    }
+    if (id === "transmission") {
+      set({ transmissionOpen: true, paletteOpen: false });
       return;
     }
     if (id.startsWith("case:")) {

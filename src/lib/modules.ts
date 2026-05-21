@@ -11,6 +11,7 @@ import {
   Gauge,
   Bot,
   Route,
+  RadioTower,
   type LucideIcon,
 } from "lucide-react";
 
@@ -19,6 +20,7 @@ export type ModuleId =
   | "background"
   | "ask"
   | "philosophy"
+  | "transmission"
   | "projects"
   | "case:simbook"
   | "case:simpull"
@@ -73,6 +75,15 @@ export const modules: ModuleDef[] = [
     description: "Why this moment matters, and why I build.",
     icon: Telescope,
     command: "open philosophy",
+    defaultSize: { w: 0, h: 0 },
+  },
+  {
+    id: "transmission",
+    title: "From Operations To Systems",
+    short: "Transmission",
+    description: "A personal transmission on the path into systems.",
+    icon: RadioTower,
+    command: "open transmission",
     defaultSize: { w: 0, h: 0 },
   },
   {

@@ -9,10 +9,12 @@ export function Dock() {
   const openModule = useOS((s) => s.openModule);
   const windows = useOS((s) => s.windows);
   const philosophyOpen = useOS((s) => s.philosophyOpen);
+  const transmissionOpen = useOS((s) => s.transmissionOpen);
   const caseStudyOpen = useOS((s) => s.caseStudyOpen);
 
   const openIds = new Set<string>(windows.map((w) => w.id));
   if (philosophyOpen) openIds.add("philosophy");
+  if (transmissionOpen) openIds.add("transmission");
   if (caseStudyOpen) openIds.add(`case:${caseStudyOpen}`);
 
   return (

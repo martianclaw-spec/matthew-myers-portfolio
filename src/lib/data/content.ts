@@ -121,6 +121,61 @@ export const operatorBackground = {
   ],
 };
 
+export interface TransmissionBeat {
+  tag: string;
+  title: string;
+  body: string;
+}
+
+export const transmission = {
+  codename: "TX-01",
+  kicker: "Personal Transmission",
+  title: "From Operations To Systems",
+  intro: "How a decade outside engineering became the reason I build the way I do.",
+  evolution: ["Sales", "Operations", "Product Thinking", "Systems", "AI-Native Builder"],
+  beats: [
+    {
+      tag: "Nontraditional Path",
+      title: "Not the usual way in",
+      body: "My path into software was not traditional, and honestly that has become one of my biggest strengths. I did not learn to code to become a developer. I became technical because I wanted to bring ideas to life and build systems that improve how people actually work.",
+    },
+    {
+      tag: "Foundation",
+      title: "A decade in the real world",
+      body: "Before I built software, I spent over a decade in sales, operations, customer-facing work, and startup-style roles. That taught me how businesses really operate, how people behave, where workflows break, and how much communication and usability matter.",
+    },
+    {
+      tag: "Obsession",
+      title: "Seeing the problems everywhere",
+      body: "Over time I became obsessed with systems. I started seeing operational problems everywhere, and I reached a point where I did not just want to talk about better solutions. I wanted to build them myself.",
+    },
+    {
+      tag: "Building",
+      title: "From talking to building",
+      body: "That led me into AI-native development and operational software. Over the last few years I have built operational booking platforms, simulator kiosk systems, workflow-driven SaaS tools, realtime control systems, and automation-focused operational software.",
+    },
+    {
+      tag: "AI-Native",
+      title: "AI as leverage",
+      body: "I fully embrace AI-native workflows. I believe AI is changing who gets to build technology, and I use tools like Claude and ChatGPT to prototype quickly and bring ambitious ideas to life. I also know that architecture, operational thinking, debugging, and real implementation matter far more than just generating code.",
+    },
+    {
+      tag: "For Teams",
+      title: "Why this matters on a team",
+      body: "I work best in fast-moving environments where ownership, adaptability, creativity, and systems thinking matter. My background looks different from a traditional computer science path, and the combination of operational experience, product thinking, business understanding, and AI-native engineering is exactly what modern startups and product teams increasingly need.",
+    },
+  ] as TransmissionBeat[],
+  closingLine: "Not a traditional path. That is the advantage.",
+  signals: [
+    { title: "Understands customers", body: "A decade close to customers taught me what people actually need." },
+    { title: "Thinks operationally", body: "I see software as workflows and operations, not just features." },
+    { title: "Communicates clearly", body: "I translate between business, customers, and systems." },
+    { title: "Builds with business context", body: "I keep revenue, adoption, and real use in view." },
+    { title: "Moves fast with AI", body: "I use AI-native workflows to go from idea to working system quickly." },
+    { title: "Connects product and engineering", body: "I bridge what to build and how to build it." },
+  ],
+};
+
 export interface TelemetrySignal {
   id: string;
   label: string;
