@@ -34,7 +34,7 @@ export const knowledgeBase: KnowledgeSnippet[] = [
       "who", "what kind", "engineer", "about", "background", "matthew",
       "developer", "summary", "self-taught", "story",
     ],
-    text: "Matthew Myers is an AI-native product engineer, full stack developer, and systems-oriented product thinker. He is self-taught and learned engineering by building real operational software rather than through a formal computer science degree. He works at the seam of product, operations, and infrastructure, and is most comfortable taking an idea from concept to a deployed, commercially viable system. He positions himself honestly as a self-taught, AI-native builder who has shipped real operational systems, SaaS platforms, kiosks, booking flows, hardware-integrated software, and product architecture.",
+    text: "Matthew Myers is an AI-native product engineer, full stack developer, and systems-oriented product thinker. He is self-taught and learned engineering by building real operational software rather than through a formal computer science degree. He came to engineering after more than ten years in sales and operations, including a Director of Sales role at a SaaS company, and he now runs Hacktivist Golf, an indoor golf and simulator venue. He builds for the kind of operation he runs day to day, so his work is unusually grounded in real operations. He works at the seam of product, operations, and infrastructure, and is most comfortable taking an idea from concept to a deployed, commercially viable system.",
   },
   {
     id: "different-from-junior",
@@ -68,7 +68,7 @@ export const knowledgeBase: KnowledgeSnippet[] = [
       "operator", "operations", "people", "communication", "nontraditional",
       "transition", "why technical", "experience before", "past",
     ],
-    text: "Before building software, Matthew spent more than ten years in sales and customer-facing work. That background is the foundation of how he builds. He understands how people decide, where workflows quietly break, and what makes an experience feel effortless. His technical ability grew out of a desire to solve real operational and human problems, which is why his software comes out operational, workflow-driven, customer-aware, and commercially grounded. The same years made him strong at communication, identifying the real problem worth solving, and wearing many hats, which is exactly what early-stage startups need.",
+    text: "Before writing software, Matthew spent more than ten years in sales, sales leadership, and operations. He managed retail teams at Verizon, was a top-five performer at the sales-tech startup Outreach.io, delivered financial solutions at OneMain, and rose to Director of Sales at the SaaS company Ingeniux, where he led the SDR team and helped close enterprise accounts. He also runs Hacktivist Golf, an indoor golf and simulator venue, where he launched a second location from demolition to opening. That is where his engineering started: he was living the operational friction daily, so he built the software to fix it. Simbook, SimPull, and Golf Kiosk are operator-built tools for the exact business he runs, which is why his work is operational, workflow-driven, customer-aware, and commercially grounded. The same background makes him strong at communication, leadership, and wearing many hats, which is what early-stage startups need.",
   },
   {
     id: "skills",
@@ -124,7 +124,7 @@ export const knowledgeBase: KnowledgeSnippet[] = [
       "simbook", "venue", "saas", "payments", "stripe", "booking",
       "multi-tenant", "rls", "security", "golf", "kiosk", "leagues",
     ],
-    text: "Simbook is a multi-tenant SaaS platform for golf and sim racing venues that collapses booking, payments, self-service kiosks, league management, and hardware orchestration into one operator surface. Matthew led a security and readiness pass to promote an audited staging build to production. He modeled authorization as three layers (Row Level Security, Postgres grants, and SECURITY DEFINER RPCs), caught six tables that had policies defined but Row Level Security disabled which left player data exposed, refactored wallet redemption into a single atomic RPC with rollback, reconciled migration drift, set up CI with a blocking type check, and moved email off a host-locked gateway to Resend. Stack: React, TypeScript, Vite, Supabase, PostgreSQL, Stripe Connect. Status: actively developed, with a production cutover in progress.",
+    text: "Simbook is a multi-tenant SaaS platform for golf and sim racing venues that collapses booking, payments, self-service kiosks, league management, and hardware orchestration into one operator surface. Matthew led a security and readiness pass to promote an audited staging build to production. He modeled authorization as three layers (Row Level Security, Postgres grants, and SECURITY DEFINER RPCs), caught six tables that had policies defined but Row Level Security disabled which left player data exposed, refactored wallet redemption into a single atomic RPC with rollback, reconciled migration drift, set up CI with a blocking type check, and moved email off a host-locked gateway to Resend. Stack: React, TypeScript, Vite, Supabase, PostgreSQL, Stripe Connect. Status: actively developed, with a production cutover in progress. Simbook serves the kind of golf and simulator venue Matthew runs at Hacktivist Golf, so it is built from firsthand operational experience.",
   },
   {
     id: "simpull",
@@ -146,7 +146,7 @@ export const knowledgeBase: KnowledgeSnippet[] = [
       "golf kiosk", "kiosk", "trackman", "qr", "session", "white-label",
       "self-service", "bay", "extension",
     ],
-    text: "Golf Kiosk v1 is a self-service kiosk for golf simulator bays. It integrates with Simbook and supports Trackman workflows, uses QR-based booking and in-session extension, enforces session limits so a bay frees up predictably, and is designed for white-label deployment across multiple locations. Stack: React, TypeScript, and API integrations. Status: scaling toward multi-location rollout.",
+    text: "Golf Kiosk v1 is a self-service kiosk for golf simulator bays. It integrates with Simbook and supports Trackman workflows, uses QR-based booking and in-session extension, enforces session limits so a bay frees up predictably, and is designed for white-label deployment across multiple locations. Stack: React, TypeScript, and API integrations. Status: scaling toward multi-location rollout. It is built for the kind of indoor golf venue Matthew operates, so it comes from real operational experience.",
   },
   {
     id: "project-status",
