@@ -75,13 +75,13 @@ export function OS() {
   }, [togglePalette, setPalette, setPhilosophy, closeCaseStudy]);
 
   if (!mounted) {
-    return <div className="fixed inset-0 bg-bg-base" />;
+    return <div className="fixed inset-0 z-10 bg-bg-base" />;
   }
 
   const visibleWindows = windows.filter((w) => !w.minimized);
 
   return (
-    <div className="relative h-[100dvh] w-full overflow-hidden bg-bg-base">
+    <div className="fixed inset-0 z-10 overflow-hidden bg-bg-base">
       <div className="pointer-events-none absolute inset-0 aurora" />
       <div className="pointer-events-none absolute inset-0 grid-floor" />
 

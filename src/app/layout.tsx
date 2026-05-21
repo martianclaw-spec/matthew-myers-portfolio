@@ -14,10 +14,46 @@ const mono = JetBrains_Mono({
   display: "swap",
 });
 
+const siteUrl = "https://matthew-myers.vercel.app";
+const siteTitle = "Matthew Myers Builds";
+const siteDescription =
+  "Matthew Myers is an AI-native product engineer, full stack developer, and systems builder. He ships operational software systems and workflow-driven SaaS products, including Simbook, a multi-tenant venue SaaS, and SimPull, a distributed venue management OS for sim racing.";
+
 export const metadata: Metadata = {
-  title: "Matthew Myers Builds",
-  description:
-    "The personal command center of Matthew Myers. AI-Native Product Engineer, Full Stack Developer, Systems Builder.",
+  metadataBase: new URL(siteUrl),
+  title: siteTitle,
+  description: siteDescription,
+  keywords: [
+    "Matthew Myers",
+    "product engineer",
+    "full stack developer",
+    "AI-native engineer",
+    "founding engineer",
+    "systems builder",
+    "Simbook",
+    "SimPull",
+    "Next.js",
+    "React",
+    "Supabase",
+  ],
+  authors: [{ name: "Matthew Myers" }],
+  alternates: { canonical: siteUrl },
+  openGraph: {
+    title: siteTitle,
+    description: siteDescription,
+    url: siteUrl,
+    siteName: siteTitle,
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteTitle,
+    description: siteDescription,
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export const viewport: Viewport = {
