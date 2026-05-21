@@ -2,7 +2,7 @@
 
 import { useRef, type ReactNode } from "react";
 import { motion, useReducedMotion, useScroll, useSpring } from "framer-motion";
-import { X, ChevronDown, ArrowRight, Boxes } from "lucide-react";
+import { X, ChevronDown, ArrowRight, Boxes, ExternalLink } from "lucide-react";
 import { caseStudies } from "@/lib/data/caseStudies";
 import { useOS } from "@/lib/store";
 import { CaseArchitectureMap } from "./CaseArchitectureMap";
@@ -161,6 +161,21 @@ export function CaseStudyLayer({ id }: { id: string }) {
                   </span>
                 ))}
               </div>
+
+              {c.liveUrl && (
+                <a
+                  href={c.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group mt-7 inline-flex items-center gap-2 rounded-lg border border-accent/50 bg-accent/10 px-5 py-2.5 text-sm font-medium text-accent transition hover:bg-accent/15"
+                >
+                  <ExternalLink className="h-4 w-4" />
+                  Visit the live product
+                  <span className="font-mono text-[11px] text-accent/70">
+                    {c.liveUrl.replace("https://", "")}
+                  </span>
+                </a>
+              )}
             </motion.div>
 
             <div className="mt-12 flex items-center gap-2 text-ink-faint">

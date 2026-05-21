@@ -10,6 +10,7 @@ export interface ProjectRef {
   description: string;
   tags: string[];
   category: string;
+  liveUrl?: string;
   // How the "Inspect project" action opens the project in the OS.
   action: { type: "case"; id: string } | { type: "project"; id: string };
 }
@@ -21,6 +22,7 @@ const refs: ProjectRef[] = [
     description: "Multi-tenant SaaS for golf and sim racing venues: booking, payments, kiosks, and hardware orchestration.",
     tags: ["Multi-tenant", "Payments", "Security"],
     category: "Multi-tenant SaaS",
+    liveUrl: "https://simbook.io",
     action: { type: "case", id: "simbook" },
   },
   {

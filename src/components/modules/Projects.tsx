@@ -122,15 +122,28 @@ export function Projects() {
               </div>
             </div>
 
-            {caseStudies[project.id] && (
-              <button
-                onClick={() => openCaseStudy(project.id)}
-                className="group mt-5 inline-flex items-center gap-2 rounded-lg border border-accent/50 bg-accent/10 px-4 py-2 text-sm font-medium text-accent transition hover:bg-accent/15"
-              >
-                View full case study
-                <ArrowUpRight className="h-3.5 w-3.5 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-              </button>
-            )}
+            <div className="mt-5 flex flex-wrap gap-2">
+              {caseStudies[project.id] && (
+                <button
+                  onClick={() => openCaseStudy(project.id)}
+                  className="group inline-flex items-center gap-2 rounded-lg border border-accent/50 bg-accent/10 px-4 py-2 text-sm font-medium text-accent transition hover:bg-accent/15"
+                >
+                  View full case study
+                  <ArrowUpRight className="h-3.5 w-3.5 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                </button>
+              )}
+              {project.liveUrl && (
+                <a
+                  href={project.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group inline-flex items-center gap-2 rounded-lg border border-line bg-bg-base/50 px-4 py-2 text-sm text-ink-muted transition hover:border-accent/40 hover:text-ink"
+                >
+                  Visit live site
+                  <ArrowUpRight className="h-3.5 w-3.5 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                </a>
+              )}
+            </div>
           </motion.div>
       </div>
     </ModuleShell>

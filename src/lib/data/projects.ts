@@ -15,6 +15,7 @@ export interface Project {
   stack: string[];
   metrics: ProjectMetric[];
   accent: string;
+  liveUrl?: string;
 }
 
 export const projects: Project[] = [
@@ -92,6 +93,7 @@ export const projects: Project[] = [
       { label: "Hardware", value: "Auto-launch" },
     ],
     accent: "215 90% 64%",
+    liveUrl: "https://simbook.io",
   },
 ];
 

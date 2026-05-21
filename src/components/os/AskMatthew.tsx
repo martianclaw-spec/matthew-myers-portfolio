@@ -417,13 +417,26 @@ function ProjectRefCard({
             </span>
           ))}
         </div>
-        <button
-          onClick={() => onInspect(refData)}
-          className="group inline-flex shrink-0 items-center gap-1 font-mono text-[10px] uppercase tracking-wider text-accent transition hover:text-ink"
-        >
-          Inspect
-          <ArrowUpRight className="h-3 w-3 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-        </button>
+        <div className="flex shrink-0 items-center gap-3">
+          {refData.liveUrl && (
+            <a
+              href={refData.liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center gap-1 font-mono text-[10px] uppercase tracking-wider text-ink-muted transition hover:text-accent"
+            >
+              Live
+              <ArrowUpRight className="h-3 w-3 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            </a>
+          )}
+          <button
+            onClick={() => onInspect(refData)}
+            className="group inline-flex items-center gap-1 font-mono text-[10px] uppercase tracking-wider text-accent transition hover:text-ink"
+          >
+            Inspect
+            <ArrowUpRight className="h-3 w-3 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+          </button>
+        </div>
       </div>
     </div>
   );

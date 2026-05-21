@@ -44,6 +44,7 @@ export interface CaseStudy {
   positioning: string;
   summary: string;
   status: string;
+  liveUrl?: string;
   tags: string[];
   tech: string[];
   stats: { label: string; value: string }[];
@@ -84,6 +85,7 @@ const simbook: CaseStudy = {
   summary:
     "A multi-tenant SaaS platform for booking, payments, self-service kiosks, and hardware orchestration across golf bays and sim-racing rigs. One operator surface for a real, revenue-generating business.",
   status: "Production hardening",
+  liveUrl: "https://simbook.io",
   tags: ["Vertical SaaS", "Multi-tenant", "Payments", "Cyber-physical", "Production"],
   tech: [
     "React",

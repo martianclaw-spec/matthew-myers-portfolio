@@ -98,6 +98,19 @@ export function SeoContent() {
                   {project.stack.join(", ")}
                 </p>
 
+                {project.liveUrl && (
+                  <p className="mt-2 text-sm text-ink-muted">
+                    <span className="font-semibold text-ink-faint">Live site: </span>
+                    <a
+                      className="text-accent underline"
+                      href={project.liveUrl}
+                      rel="noopener noreferrer"
+                    >
+                      {project.liveUrl.replace("https://", "")}
+                    </a>
+                  </p>
+                )}
+
                 {study && (
                   <div className="mt-4">
                     <h4 className="text-sm font-semibold uppercase tracking-wide text-ink-faint">
