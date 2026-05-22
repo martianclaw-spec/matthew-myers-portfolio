@@ -39,7 +39,7 @@ function buildContext(snippets: { source: string; text: string }[]): string {
 async function callAnthropic(question: string, context: string): Promise<string | null> {
   const key = process.env.ANTHROPIC_API_KEY;
   if (!key) return null;
-  const model = process.env.ANTHROPIC_MODEL ?? "claude-3-5-haiku-latest";
+  const model = process.env.ANTHROPIC_MODEL ?? "claude-haiku-4-5-20251001";
 
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), 15000);
@@ -144,47 +144,6 @@ export async function POST(req: NextRequest) {
       { error: "That question is too long. Please keep it under 500 characters." },
       { status: 400 },
     );
-  }
-
-  // Temporary, secret-safe diagnostic. Returns provider status, never the key.
-  if ((body as { debug?: unknown })?.debug === true) {
-    const akey = process.env.ANTHROPIC_API_KEY;
-    const okey = process.env.OPENAI_API_KEY;
-    const out: Record<string, unknown> = {
-      hasAnthropicKey: Boolean(akey),
-      anthropicKeyPrefix: akey ? akey.slice(0, 7) : null,
-      hasOpenAIKey: Boolean(okey),
-      anthropicModel: process.env.ANTHROPIC_MODEL ?? "claude-3-5-haiku-latest",
-    };
-    if (akey) {
-      try {
-        const r = await fetch("https://api.anthropic.com/v1/messages", {
-          method: "POST",
-          headers: {
-            "content-type": "application/json",
-            "x-api-key": akey,
-            "anthropic-version": "2023-06-01",
-          },
-          body: JSON.stringify({
-            model: process.env.ANTHROPIC_MODEL ?? "claude-3-5-haiku-latest",
-            max_tokens: 16,
-            messages: [{ role: "user", content: "ping" }],
-          }),
-        });
-        out.anthropicStatus = r.status;
-        out.anthropicBody = (await r.text()).slice(0, 300);
-        const ml = await fetch("https://api.anthropic.com/v1/models?limit=20", {
-          headers: { "x-api-key": akey, "anthropic-version": "2023-06-01" },
-        });
-        const mlJson = await ml.json();
-        out.models = Array.isArray(mlJson?.data)
-          ? mlJson.data.map((m: { id: string }) => m.id)
-          : mlJson;
-      } catch (e) {
-        out.anthropicError = String(e).slice(0, 200);
-      }
-    }
-    return NextResponse.json(out);
   }
 
   const trimmed = question.trim();
