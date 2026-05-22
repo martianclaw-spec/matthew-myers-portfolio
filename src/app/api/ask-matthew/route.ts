@@ -146,6 +146,40 @@ export async function POST(req: NextRequest) {
     );
   }
 
+  // Temporary, secret-safe diagnostic. Returns provider status, never the key.
+  if ((body as { debug?: unknown })?.debug === true) {
+    const akey = process.env.ANTHROPIC_API_KEY;
+    const okey = process.env.OPENAI_API_KEY;
+    const out: Record<string, unknown> = {
+      hasAnthropicKey: Boolean(akey),
+      anthropicKeyPrefix: akey ? akey.slice(0, 7) : null,
+      hasOpenAIKey: Boolean(okey),
+      anthropicModel: process.env.ANTHROPIC_MODEL ?? "claude-3-5-haiku-latest",
+    };
+    if (akey) {
+      try {
+        const r = await fetch("https://api.anthropic.com/v1/messages", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+            "x-api-key": akey,
+            "anthropic-version": "2023-06-01",
+          },
+          body: JSON.stringify({
+            model: process.env.ANTHROPIC_MODEL ?? "claude-3-5-haiku-latest",
+            max_tokens: 16,
+            messages: [{ role: "user", content: "ping" }],
+          }),
+        });
+        out.anthropicStatus = r.status;
+        out.anthropicBody = (await r.text()).slice(0, 300);
+      } catch (e) {
+        out.anthropicError = String(e).slice(0, 200);
+      }
+    }
+    return NextResponse.json(out);
+  }
+
   const trimmed = question.trim();
   const { snippets, matched } = retrieve(trimmed);
   const context = buildContext(snippets);
