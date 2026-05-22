@@ -137,7 +137,7 @@ export const knowledgeBase: KnowledgeSnippet[] = [
       "simbook", "venue", "saas", "payments", "stripe", "booking",
       "multi-tenant", "rls", "security", "golf", "kiosk", "leagues",
     ],
-    text: "Simbook is a multi-tenant SaaS platform for golf and sim racing venues that collapses booking, payments, self-service kiosks, league management, and hardware orchestration into one operator surface. Matthew led a security and readiness pass to promote an audited staging build to production. He modeled authorization as three layers (Row Level Security, Postgres grants, and SECURITY DEFINER RPCs), caught six tables that had policies defined but Row Level Security disabled which left player data exposed, refactored wallet redemption into a single atomic RPC with rollback, reconciled migration drift, set up CI with a blocking type check, and moved email off a host-locked gateway to Resend. Stack: React, TypeScript, Vite, Supabase, PostgreSQL, Stripe Connect. Status: actively developed, with a production cutover in progress. Simbook serves the kind of golf and simulator venue Matthew runs at Hacktivist Golf, so it is built from firsthand operational experience. The live product is at simbook.io.",
+    text: "Simbook is a multi-tenant SaaS platform for golf and sim racing venues that collapses booking, payments, self-service kiosks, league management, and hardware orchestration into one operator surface. Matthew led a security and readiness pass to promote an audited staging build to production. He modeled authorization as three layers (Row Level Security, Postgres grants, and SECURITY DEFINER RPCs), caught six tables that had policies defined but Row Level Security disabled which left player data exposed, refactored wallet redemption into a single atomic RPC with rollback, reconciled migration drift, set up CI with a blocking type check, and moved email off a host-locked gateway to Resend. Stack: React, TypeScript, Vite, Supabase, PostgreSQL, Stripe Connect. Status: live and revenue-generating since December, now being migrated off its initial host onto a hardened, security-audited build, with email verification through Resend as the final step before the new build goes live. Simbook serves the kind of golf and simulator venue Matthew runs at Hacktivist Golf, so it is built from firsthand operational experience. The live product is at simbook.io.",
   },
   {
     id: "simpull",
@@ -170,7 +170,7 @@ export const knowledgeBase: KnowledgeSnippet[] = [
       "status", "finished", "done", "complete", "in progress", "launched",
       "current", "shipped", "live",
     ],
-    text: "Matthew's projects are real and actively developed rather than finished, polished products. Simbook is security-audited on staging with a production cutover in progress. SimPull is fully built and deployable, with hardening and a second venue deployment as next steps. Golf Kiosk v1 is moving toward multi-location rollout. He frames in-progress work honestly as actively developed.",
+    text: "Matthew's projects are real systems, not demos. Simbook has been live and revenue-generating since December and is now being migrated onto a hardened, security-audited build, with email verification through Resend as the final step before the new build goes live. SimPull is fully built and deployable, with hardening and a second venue deployment as next steps. Golf Kiosk v1 is moving toward multi-location rollout. He frames in-progress work honestly.",
   },
   {
     id: "strongest-projects",

@@ -83,8 +83,8 @@ const simbook: CaseStudy = {
   name: "Simbook",
   positioning: "Operational control system for commercial simulator venues.",
   summary:
-    "A multi-tenant SaaS platform for booking, payments, self-service kiosks, and hardware orchestration across golf bays and sim-racing rigs. One operator surface for a real, revenue-generating business.",
-  status: "Production hardening",
+    "A multi-tenant SaaS platform for booking, payments, self-service kiosks, and hardware orchestration across golf bays and sim-racing rigs. Live and revenue-generating since December, now being migrated onto a hardened, security-audited build.",
+  status: "Live in production",
   liveUrl: "https://simbook.io",
   tags: ["Vertical SaaS", "Multi-tenant", "Payments", "Cyber-physical", "Production"],
   tech: [
@@ -214,10 +214,10 @@ const simbook: CaseStudy = {
   ],
   roadmap: {
     status:
-      "Actively developed. The build is security-audited on staging, with the production cutover in progress under a strict do-not-disrupt constraint.",
+      "Live and revenue-generating since December. Matthew is migrating the platform off its initial host onto a hardened, security-audited build, under a strict do-not-disrupt constraint. The only remaining blocker before the new build goes live is wiring email verification through Resend.",
     now: [
-      "Resolve the auth email blocker and complete the production cutover.",
-      "Move real customers onto the hardened build.",
+      "Wire email verification through Resend, the final blocker before the hardened build goes live.",
+      "Migrate the live platform off its initial host onto the hardened build.",
     ],
     next: [
       "Add an RLS and permissions regression test suite.",

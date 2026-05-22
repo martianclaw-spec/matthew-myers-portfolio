@@ -74,10 +74,10 @@ export const projects: Project[] = [
     codename: "SB-OPS",
     name: "Simbook",
     tagline: "Operational control system for simulator venues",
-    status: "building",
+    status: "live",
     year: "2026",
     summary:
-      "A multi-tenant SaaS platform for golf and sim-racing venues. Simbook collapses booking, payments, self-service kiosks, league management, and physical hardware orchestration into one operator surface, backed by a defense-in-depth authorization model and an atomic money path.",
+      "A multi-tenant SaaS platform for golf and sim-racing venues, live and revenue-generating since December. Simbook collapses booking, payments, self-service kiosks, league management, and physical hardware orchestration into one operator surface, backed by a defense-in-depth authorization model and an atomic money path. It is now being migrated onto a hardened, security-audited build.",
     capabilities: [
       "Three surfaces: guest booking, operator dashboard, platform admin",
       "Stripe Connect payouts, per-station subscriptions, idempotent refunds",
