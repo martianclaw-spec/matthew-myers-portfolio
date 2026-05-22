@@ -71,6 +71,19 @@ export const knowledgeBase: KnowledgeSnippet[] = [
     text: "Before writing software, Matthew spent more than ten years in sales, sales leadership, and operations. He managed retail teams at Verizon, was a top-five performer at the sales-tech startup Outreach.io, delivered financial solutions at OneMain, and rose to Director of Sales at the SaaS company Ingeniux, where he led the SDR team and helped close enterprise accounts. He also runs Hacktivist Golf, an indoor golf and simulator venue, where he launched a second location from demolition to opening. That is where his engineering started: he was living the operational friction daily, so he built the software to fix it. Simbook, SimPull, and Golf Kiosk are operator-built tools for the exact business he runs, which is why his work is operational, workflow-driven, customer-aware, and commercially grounded. The same background makes him strong at communication, leadership, and wearing many hats, which is what early-stage startups need.",
   },
   {
+    id: "experience",
+    section: "profile",
+    title: "Work history and timeline",
+    source: "Resume",
+    keywords: [
+      "work history", "timeline", "dates", "when", "how long", "tenure",
+      "jobs", "roles", "experience", "resume", "career history", "years",
+      "employment", "worked", "ingeniux", "verizon", "outreach", "onemain",
+      "hacktivist", "director of sales", "leadership", "team",
+    ],
+    text: "Matthew's work history, most recent first: General Manager at Hacktivist Golf, an indoor golf and simulator venue, from 2023 to present, where he helped launch and operationalize a second location and runs leagues, venue operations, and customer engagement. Director of Sales at the SaaS company Ingeniux Corporation from 2021 to 2023, leading sales and marketing alignment and mentoring SDR teams. Sales Development Representative at Ingeniux from 2020 to 2021. Personal Loan Specialist at OneMain Financial from 2017 to 2020. Sales Development Representative at the SaaS startup Outreach.io from 2016 to 2017, where he ranked among the top performers. Assistant Manager at Verizon Wireless from 2013 to 2016, managing retail operations and customer experience. Education: a high school diploma from Tyrone Area School District. That is more than a decade operating in sales, SaaS, and venue operations before going deep on product engineering. His operations and business strengths include sales leadership, team leadership, cross-functional collaboration, workflow optimization, and customer operations.",
+  },
+  {
     id: "skills",
     section: "skills",
     title: "Technical stack",
@@ -240,6 +253,7 @@ export const recruiterPrompts: RecruiterPrompt[] = [
   { label: "Operational Systems", question: "What real-world operational systems has Matthew built?" },
   { label: "Strengths", question: "What are Matthew's strongest skills?" },
   { label: "Operator Background", question: "What is Matthew's background before engineering?" },
+  { label: "Work History", question: "What is Matthew's full work history and timeline?" },
   { label: "Honest Gaps", question: "What are Matthew's honest gaps?" },
 ];
 
