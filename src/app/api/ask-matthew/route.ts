@@ -173,6 +173,13 @@ export async function POST(req: NextRequest) {
         });
         out.anthropicStatus = r.status;
         out.anthropicBody = (await r.text()).slice(0, 300);
+        const ml = await fetch("https://api.anthropic.com/v1/models?limit=20", {
+          headers: { "x-api-key": akey, "anthropic-version": "2023-06-01" },
+        });
+        const mlJson = await ml.json();
+        out.models = Array.isArray(mlJson?.data)
+          ? mlJson.data.map((m: { id: string }) => m.id)
+          : mlJson;
       } catch (e) {
         out.anthropicError = String(e).slice(0, 200);
       }
