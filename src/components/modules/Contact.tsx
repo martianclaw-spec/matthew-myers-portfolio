@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, Linkedin, Github, Copy, Check, ArrowUpRight } from "lucide-react";
+import { Mail, Linkedin, Github, Copy, Check, ArrowUpRight, Code2 } from "lucide-react";
 import { identity } from "@/lib/data/content";
 import { ModuleShell, SectionLabel } from "@/components/ui/primitives";
 
@@ -47,6 +47,13 @@ export function Contact() {
       value: "Code and systems",
       href: identity.github,
       icon: Github,
+    },
+    {
+      id: "portfolio-repo",
+      label: "Portfolio source",
+      value: "This site is open source",
+      href: "https://github.com/martianclaw-spec/matthew-myers-portfolio",
+      icon: Code2,
     },
   ];
 
