@@ -2,7 +2,8 @@
 
 import { motion } from "framer-motion";
 import { Check, Circle, ArrowUpRight } from "lucide-react";
-import { projects, statusLabel } from "@/lib/data/projects";
+import { projects, statusLabel, moreOnGithub } from "@/lib/data/projects";
+import { identity } from "@/lib/data/content";
 import { caseStudies } from "@/lib/data/caseStudies";
 import { useOS } from "@/lib/store";
 import { event } from "@/lib/analytics";
@@ -141,12 +142,41 @@ export function Projects() {
                   onClick={() => event("visit_live_site", { project: project.id })}
                   className="group inline-flex items-center gap-2 rounded-lg border border-line bg-bg-base/50 px-4 py-2 text-sm text-ink-muted transition hover:border-accent/40 hover:text-ink"
                 >
-                  Visit live site
+                  {project.liveUrl.includes("github.com") ? "View on GitHub" : "Visit live site"}
                   <ArrowUpRight className="h-3.5 w-3.5 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </a>
               )}
             </div>
           </motion.div>
+      </div>
+
+      <div className="mt-8">
+        <SectionLabel>more on github</SectionLabel>
+        <div className="grid gap-2 sm:grid-cols-2">
+          {moreOnGithub.map((m) => (
+            <a
+              key={m.name}
+              href={m.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group rounded-lg border border-line bg-bg-base/40 px-3 py-2.5 transition hover:border-accent/40"
+            >
+              <div className="flex items-center justify-between text-sm font-medium text-ink">
+                {m.name}
+                <ArrowUpRight className="h-3.5 w-3.5 text-ink-faint transition group-hover:text-accent" />
+              </div>
+              <div className="mt-0.5 text-xs text-ink-muted">{m.detail}</div>
+            </a>
+          ))}
+        </div>
+        <a
+          href={identity.github}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-3 inline-flex items-center gap-1.5 text-xs text-ink-muted transition hover:text-accent"
+        >
+          All repositories on GitHub <ArrowUpRight className="h-3 w-3" />
+        </a>
       </div>
     </ModuleShell>
   );

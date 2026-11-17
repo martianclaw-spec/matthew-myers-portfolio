@@ -39,31 +39,31 @@ export function CommandPalette() {
 
     const projectItems: CommandItem[] = [
       {
-        id: "launch-kiosk",
-        label: "Launch Golf Kiosk v1",
-        hint: "launch kiosk",
-        keywords: "golf kiosk launch project trackman",
+        id: "open-mcp",
+        label: "Inspect Venue Ops MCP",
+        hint: "inspect mcp",
+        keywords: "mcp agent ai venue ops claude tools project",
         icon: Boxes,
         run: () => {
           openModule("projects");
-          setActiveProject("golf-kiosk");
+          setActiveProject("venue-ops-mcp");
         },
       },
       {
-        id: "case-simbook",
-        label: "Open Simbook case study",
-        hint: "inspect simbook",
-        keywords: "simbook case study venue saas payments architecture inspect",
+        id: "case-hacktivist",
+        label: "Open Hacktivist Platform case study",
+        hint: "inspect hacktivist",
+        keywords: "hacktivist hacktivist.ai case study venue saas golf trackman booking payments kiosk architecture inspect",
         icon: ServerCog,
-        run: () => openCaseStudy("simbook"),
+        run: () => openCaseStudy("hacktivist"),
       },
       {
-        id: "case-simpull",
-        label: "Open SimPull case study",
-        hint: "inspect simpull",
-        keywords: "simpull case study sim racing venue distributed realtime offline architecture inspect",
+        id: "case-racing",
+        label: "Open Hacktivist Racing case study",
+        hint: "inspect racing",
+        keywords: "racing sim racing assetto corsa rfactor rf2 rig launcher case study distributed realtime offline architecture inspect",
         icon: ServerCog,
-        run: () => openCaseStudy("simpull"),
+        run: () => openCaseStudy("hacktivist-racing"),
       },
     ];
 

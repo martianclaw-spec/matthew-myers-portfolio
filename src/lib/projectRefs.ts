@@ -17,46 +17,61 @@ export interface ProjectRef {
 
 const refs: ProjectRef[] = [
   {
-    id: "simbook",
-    name: "Simbook",
-    description: "Multi-tenant SaaS for golf and sim racing venues: booking, payments, kiosks, and hardware orchestration.",
-    tags: ["Multi-tenant", "Payments", "Security"],
-    category: "Multi-tenant SaaS",
-    liveUrl: "https://simbook.io",
-    action: { type: "case", id: "simbook" },
+    id: "hacktivist",
+    name: "Hacktivist Platform",
+    description: "The hacktivist.ai venue platform: booking, payments, kiosks, leagues, gift cards and TrackMan and rig control across 5 venues.",
+    tags: ["Live", "Payments", "Security"],
+    category: "Venue platform",
+    liveUrl: "https://hacktivist.ai",
+    action: { type: "case", id: "hacktivist" },
   },
   {
-    id: "simpull",
-    name: "SimPull",
-    description: "Venue management OS for sim racing with realtime rig control, offline-first design, and a federated hub.",
+    id: "hacktivist-racing",
+    name: "Hacktivist Racing",
+    description: "Commercial launcher and rig control for Assetto Corsa and rFactor 2, with offline-first rig agents.",
     tags: ["Distributed", "Realtime", "Offline-first"],
     category: "Distributed systems",
-    action: { type: "case", id: "simpull" },
+    action: { type: "case", id: "hacktivist-racing" },
   },
   {
-    id: "golf-kiosk",
-    name: "Golf Kiosk v1",
-    description: "Self-service kiosk for golf bays with Simbook and Trackman workflows, QR booking, and session enforcement.",
-    tags: ["Self-service", "Trackman", "White-label"],
-    category: "Operational kiosk",
-    action: { type: "project", id: "golf-kiosk" },
+    id: "venue-ops-mcp",
+    name: "Venue Ops MCP",
+    description: "An MCP server that lets an AI agent help run the venues, with prepare-then-confirm on every change.",
+    tags: ["MCP", "AI agents", "Human in the loop"],
+    category: "AI tooling",
+    liveUrl: "https://github.com/martianclaw-spec/venue-ops-mcp",
+    action: { type: "project", id: "venue-ops-mcp" },
+  },
+  {
+    id: "martian-core",
+    name: "Martian Core",
+    description: "Platform behind 20+ products: per-project Postgres, auth, storage, email, hosting, monitoring and an MCP interface.",
+    tags: ["Platform", "MCP", "Multi-project"],
+    category: "Internal platform",
+    liveUrl: "https://martianindustries.io",
+    action: { type: "project", id: "martian-core" },
   },
 ];
 
 const byId = new Map(refs.map((r) => [r.id, r]));
 
-// Map of detectable phrases to project ids. Longer phrases first so "SimPull"
-// is not shadowed by a shorter match.
+// Map of detectable phrases to project ids. Longer phrases first so
+// "Hacktivist Racing" is not shadowed by "Hacktivist".
 const matchers: { phrase: string; id: string }[] = [
-  { phrase: "golf kiosk", id: "golf-kiosk" },
-  { phrase: "simpull", id: "simpull" },
-  { phrase: "simbook", id: "simbook" },
+  { phrase: "hacktivist racing", id: "hacktivist-racing" },
+  { phrase: "rfactor", id: "hacktivist-racing" },
+  { phrase: "assetto corsa", id: "hacktivist-racing" },
+  { phrase: "venue ops mcp", id: "venue-ops-mcp" },
+  { phrase: "mcp server", id: "venue-ops-mcp" },
+  { phrase: "martian core", id: "martian-core" },
+  { phrase: "hacktivist", id: "hacktivist" },
 ];
 
 const sourceToId: Record<string, string> = {
-  "Simbook Case Study": "simbook",
-  "SimPull Case Study": "simpull",
-  "Golf Kiosk": "golf-kiosk",
+  "Hacktivist Platform Case Study": "hacktivist",
+  "Hacktivist Racing Case Study": "hacktivist-racing",
+  "Venue Ops MCP": "venue-ops-mcp",
+  "Martian Core": "martian-core",
 };
 
 export function getProjectRef(id: string): ProjectRef | undefined {

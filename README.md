@@ -12,8 +12,8 @@ The site is not a static resume. It boots into an operating-system-style UI, and
 
 If you came here from a job application, the three things you probably want to see are:
 
-1. **A grounded LLM application in production.** The `Recruiter Console` module is a real retrieval-grounded chat assistant powered by the Anthropic API, with a curated knowledge base, server-side rate limiting, deterministic fallback, source citations, and inline project reference cards that link back into the OS. It is not a prompt wrapper. See [The Recruiter Console](#the-recruiter-console-grounded-llm-application) below.
-2. **A real production SaaS this codebase complements.** [simbook.io](https://simbook.io) is a multi-tenant SaaS for golf and simulator venues, live and revenue-generating since December. This portfolio is the public surface; Simbook is the operational system.
+1. **A grounded LLM application in production.** The `Recruiter Console` module is a real retrieval-grounded chat assistant powered by the Anthropic API, with a curated knowledge base, server-side rate limiting and spend caps, same-origin checks, security headers, deterministic fallback, source citations, and inline project reference cards that link back into the OS. It is not a prompt wrapper. See [The Recruiter Console](#the-recruiter-console-grounded-llm-application) below.
+2. **A real production SaaS this codebase complements.** [hacktivist.ai](https://hacktivist.ai) is the venue platform Matthew built for golf and sim-racing venues, live and revenue-generating since December 2025 across five locations. This portfolio is the public surface; the Hacktivist platform is the operational system.
 3. **Pragmatic engineering decisions.** App-shell + SSR layer for crawlers, custom analytics events, immersive layers with hardened lifecycle, accessibility-friendly motion, and a clear separation of data and presentation across modules.
 
 ---
@@ -90,9 +90,9 @@ The OS exposes nine modules, launched from a dock, a `Ctrl/Cmd+K` command palett
 | Recruiter Console    | The grounded LLM assistant described above.                                |
 | The Shift            | Immersive philosophy layer on AI as a force multiplier.                    |
 | From Operations To Systems | Immersive personal-transmission layer.                               |
-| Projects Explorer    | Three flagship projects (Simbook, SimPull, Golf Kiosk).                    |
-| Case Study: Simbook  | Immersive case study with interactive architecture map.                    |
-| Case Study: SimPull  | Immersive case study with interactive architecture map.                    |
+| Projects Explorer    | Hacktivist Platform, Hacktivist Racing, Venue Ops MCP, Martian Core, plus more on GitHub. |
+| Case Study: Hacktivist Platform | Immersive case study with interactive architecture map.                    |
+| Case Study: Hacktivist Racing | Immersive case study with interactive architecture map.                    |
 | Architecture Map     | High-level systems map of how I think.                                     |
 | AI-Native Workflow   | Thesis and application areas for AI as leverage.                           |
 | What I Bring         | Team-value cards.                                                          |
@@ -195,4 +195,4 @@ MIT. Use any of the patterns here in your own work.
 - **Site:** [matthew-myers.vercel.app](https://matthew-myers.vercel.app)
 - **GitHub:** [martianclaw-spec](https://github.com/martianclaw-spec)
 - **LinkedIn:** [matthew-myers-91202011a](https://linkedin.com/in/matthew-myers-91202011a)
-- **Live Simbook product:** [simbook.io](https://simbook.io)
+- **Live Hacktivist platform:** [hacktivist.ai](https://hacktivist.ai)

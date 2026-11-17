@@ -18,7 +18,7 @@ const mono = JetBrains_Mono({
 const siteUrl = "https://matthew-myers.vercel.app";
 const siteTitle = "Matthew Myers Builds";
 const siteDescription =
-  "Matthew Myers is an AI-native product engineer, full stack developer, and systems builder. He ships operational software systems and workflow-driven SaaS products, including Simbook, a multi-tenant venue SaaS, and SimPull, a distributed venue management OS for sim racing.";
+  "Matthew Myers is an AI-native product engineer, full stack developer, and systems builder. After ten years in B2B SaaS sales, he built the Hacktivist platform (hacktivist.ai), which runs golf and sim-racing venues with booking, payments, kiosks, TrackMan and Assetto Corsa / rFactor 2 rig control, plus an MCP server that lets AI agents help run them.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -31,8 +31,14 @@ export const metadata: Metadata = {
     "AI-native engineer",
     "founding engineer",
     "systems builder",
-    "Simbook",
-    "SimPull",
+    "Hacktivist",
+    "hacktivist.ai",
+    "sim racing software",
+    "Assetto Corsa",
+    "rFactor 2",
+    "MCP",
+    "solutions engineer",
+    "forward deployed engineer",
     "Next.js",
     "React",
     "Supabase",

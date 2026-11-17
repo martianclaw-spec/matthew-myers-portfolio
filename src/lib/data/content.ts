@@ -1,9 +1,9 @@
 export const identity = {
   handle: "Matthew Myers Builds",
   name: "Matthew Myers",
-  roles: ["AI-Native Product Engineer", "Full Stack Developer", "Systems Builder"],
+  roles: ["AI-Native Product Engineer", "Founder", "Technical Seller"],
   positioning:
-    "I build operational software systems, workflow-driven SaaS products, and AI-native product experiences.",
+    "Ten years selling B2B software, now building it. I built the Hacktivist platform (hacktivist.ai) that runs five golf and sim-racing venues, an Assetto Corsa and rFactor 2 launcher, and MCP servers that let AI agents help run real businesses.",
   email: "Matthew@martianindustries.io",
   linkedin: "https://linkedin.com/in/matthew-myers-91202011a",
   github: "https://github.com/martianclaw-spec",
@@ -76,7 +76,7 @@ export const operatorBackground = {
   headline:
     "My technical ability grew out of a desire to solve real operational and human problems.",
   narrative:
-    "Before I wrote software, I spent more than ten years in sales, sales leadership, and operations. I managed retail teams at Verizon, ranked among the top performers at the sales-tech startup Outreach.io, delivered financial solutions at OneMain, and rose to Director of Sales at the SaaS company Ingeniux. Today I also run Hacktivist Golf, an indoor golf and simulator venue, where I launched a second location from demolition to opening day. That is where the engineering started. I was living the operational friction every day, so I built the software to fix it. Simbook, SimPull, and Golf Kiosk are operator-built tools for the exact business I run, which is why my software comes out operational, workflow-driven, and grounded in how a real venue actually works.",
+    "Before I wrote software, I spent more than ten years in sales, sales leadership, and operations. I managed retail teams at Verizon, was the #1 SDR in my office at the sales-tech startup Outreach.io, delivered financial solutions at OneMain, rose to Director of Sales at the SaaS company Ingeniux, and built an outbound function from scratch at Link Computer. Then I started running Hacktivist, a golf and sim-racing business that grew to five locations inside partner venues. That is where the engineering started. I was living the operational friction every day, so I built the whole platform to fix it: hacktivist.ai handles booking, payments, kiosks, leagues and gift cards, launches Assetto Corsa and rFactor 2 rigs, and has an AI agent that helps run it. Because I am the operator, my software comes out grounded in how a real venue actually works.",
   phases: [
     {
       tag: "Retail Leadership",
@@ -87,20 +87,20 @@ export const operatorBackground = {
     {
       tag: "SaaS Sales",
       period: "2016 to 2024",
-      title: "Outreach.io to Ingeniux",
-      body: "A decade in B2B sales and leadership: a top-five performer at the sales-tech startup Outreach.io, financial solutions at OneMain, and rising to Director of Sales at the SaaS company Ingeniux, where he led the SDR team, built outreach systems, and helped close enterprise accounts.",
+      title: "Outreach.io, Ingeniux, Link Computer",
+      body: "A decade in B2B sales and leadership: #1 SDR in his office at the sales-tech startup Outreach.io (quota in 11 of 14 months), financial solutions at OneMain, rising to Director of Sales at the SaaS company Ingeniux, where he led the SDR team and helped land Baker Hughes, then building Link Computer's outbound function from zero.",
     },
     {
       tag: "Venue Operator",
       period: "2023 to present",
-      title: "General Manager, Hacktivist Golf",
-      body: "Runs an indoor golf and simulator venue. Launched a second location from demolition to opening day and manages leagues, bookings, food and beverage, staff, and permit compliance. This is where he lived the operational friction firsthand.",
+      title: "Hacktivist: five golf and sim-racing venues",
+      body: "Runs Hacktivist, which grew to five locations inside partner host venues across Central Pennsylvania. Launched a location from demolition to opening day and manages leagues, bookings, partnerships, staff, and permits. This is where he lived the operational friction firsthand.",
     },
     {
       tag: "Builder",
       period: "Now",
       title: "Operator-built software",
-      body: "He turned that lived experience into software for the exact domain he operates: Simbook, SimPull, and Golf Kiosk. Because he is the operator, the systems are grounded in how a venue actually runs.",
+      body: "He turned that lived experience into the Hacktivist platform at hacktivist.ai: booking, payments, kiosks, TrackMan and Assetto Corsa / rFactor 2 rig control, and an MCP server so an AI agent can help run it. Through Martian Industries he also built Martian Core, the platform 20+ other products run on.",
     },
   ] as BackgroundPhase[],
   strengths: [
@@ -132,7 +132,7 @@ export const transmission = {
   kicker: "Personal Transmission",
   title: "From Operations To Systems",
   intro: "How a decade outside engineering became the reason I build the way I do.",
-  evolution: ["Sales", "Operations", "Product Thinking", "Systems", "AI-Native Builder"],
+  evolution: ["Sales", "Sales Leadership", "Venue Operations", "Platform Builder", "AI-Native Founder"],
   beats: [
     {
       tag: "Nontraditional Path",
@@ -152,7 +152,7 @@ export const transmission = {
     {
       tag: "Building",
       title: "From talking to building",
-      body: "That led me into AI-native development and operational software. Over the last few years I have built operational booking platforms, simulator kiosk systems, workflow-driven SaaS tools, realtime control systems, and automation-focused operational software.",
+      body: "That led me into AI-native development and operational software. I built the Hacktivist platform that runs five venues, a commercial launcher for Assetto Corsa and rFactor 2, an MCP server that lets AI agents operate a real business with a human approving every change, and Martian Core, the platform more than 20 of my products run on.",
     },
     {
       tag: "AI-Native",

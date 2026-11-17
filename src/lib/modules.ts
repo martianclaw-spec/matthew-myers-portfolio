@@ -22,8 +22,8 @@ export type ModuleId =
   | "philosophy"
   | "transmission"
   | "projects"
-  | "case:simbook"
-  | "case:simpull"
+  | "case:hacktivist"
+  | "case:hacktivist-racing"
   | "architecture"
   | "ai"
   | "value"
@@ -96,21 +96,21 @@ export const modules: ModuleDef[] = [
     defaultSize: { w: 880, h: 620 },
   },
   {
-    id: "case:simbook",
-    title: "Case Study: Simbook",
-    short: "Simbook",
-    description: "Multi-tenant venue SaaS systems breakdown.",
+    id: "case:hacktivist",
+    title: "Case Study: Hacktivist Platform",
+    short: "Hacktivist",
+    description: "The hacktivist.ai venue platform, systems breakdown.",
     icon: ServerCog,
-    command: "open simbook case study",
+    command: "open hacktivist case study",
     defaultSize: { w: 0, h: 0 },
   },
   {
-    id: "case:simpull",
-    title: "Case Study: SimPull",
-    short: "SimPull",
-    description: "Distributed sim racing venue OS breakdown.",
+    id: "case:hacktivist-racing",
+    title: "Case Study: Hacktivist Racing",
+    short: "Racing",
+    description: "Assetto Corsa and rFactor 2 rig control breakdown.",
     icon: Gauge,
-    command: "open simpull case study",
+    command: "open racing case study",
     defaultSize: { w: 0, h: 0 },
   },
   {

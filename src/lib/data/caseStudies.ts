@@ -77,15 +77,15 @@ export interface CaseStudy {
   };
 }
 
-const simbook: CaseStudy = {
-  id: "simbook",
-  codename: "SB-OPS",
-  name: "Simbook",
-  positioning: "Operational control system for commercial simulator venues.",
+const hacktivist: CaseStudy = {
+  id: "hacktivist",
+  codename: "HX-OPS",
+  name: "Hacktivist Platform",
+  positioning: "The operating system behind hacktivist.ai's golf and sim-racing venues.",
   summary:
-    "A multi-tenant SaaS platform for booking, payments, self-service kiosks, and hardware orchestration across golf bays and sim-racing rigs. Live and revenue-generating since December, now being migrated onto a hardened, security-audited build.",
+    "The platform hacktivist.ai runs on: booking, payments, self-service kiosks, leagues, gift cards, and hardware orchestration across TrackMan golf bays and sim-racing rigs. Built end to end by Matthew, live and revenue-generating since December 2025 across five venues, with about 925 paid bookings in its first year.",
   status: "Live in production",
-  liveUrl: "https://simbook.io",
+  liveUrl: "https://hacktivist.ai",
   tags: ["Vertical SaaS", "Multi-tenant", "Payments", "Cyber-physical", "Production"],
   tech: [
     "React",
@@ -98,10 +98,10 @@ const simbook: CaseStudy = {
     "shadcn/ui",
   ],
   stats: [
-    { label: "Tenancy", value: "Multi-venue" },
+    { label: "Venues", value: "5 live" },
+    { label: "Paid bookings", value: "925+" },
     { label: "Payments", value: "Stripe Connect" },
-    { label: "Surfaces", value: "Guest / Operator / Admin" },
-    { label: "Hardware", value: "Auto-launch agent" },
+    { label: "Hardware", value: "TrackMan + rigs" },
   ],
   problem: {
     lead: "Simulator venues run on perishable inventory and thin staff. An unbooked bay-hour is gone forever, payments have to clear online, check-in cannot depend on a front desk, and the racing rigs themselves need to start and stop without anyone babysitting a PC. Generic booking tools never reach into the hardware or sit cleanly inside a multi-sided payout flow, so the operations stay manual.",
@@ -214,10 +214,10 @@ const simbook: CaseStudy = {
   ],
   roadmap: {
     status:
-      "Live and revenue-generating since December. Matthew is migrating the platform off its initial host onto a hardened, security-audited build, under a strict do-not-disrupt constraint. The only remaining blocker before the new build goes live is wiring email verification through Resend.",
+      "Live and revenue-generating since December 2025 at hacktivist.ai, running five venues, with other venues able to run their bays on it under their own name.",
     now: [
-      "Wire email verification through Resend, the final blocker before the hardened build goes live.",
-      "Migrate the live platform off its initial host onto the hardened build.",
+      "Onboard more host venues (bars, hotels, golf rooms) onto the platform.",
+      "Run day-to-day venue operations through the Venue Ops MCP agent with human confirmation.",
     ],
     next: [
       "Add an RLS and permissions regression test suite.",
@@ -232,14 +232,14 @@ const simbook: CaseStudy = {
   },
 };
 
-const simpull: CaseStudy = {
-  id: "simpull",
-  codename: "SP-VMS",
-  name: "SimPull",
-  positioning: "Venue management operating system for commercial sim racing.",
+const hacktivistRacing: CaseStudy = {
+  id: "hacktivist-racing",
+  codename: "HX-RACE",
+  name: "Hacktivist Racing",
+  positioning: "Commercial launcher and rig control for Assetto Corsa and rFactor 2.",
   summary:
-    "The operational layer between the rigs, the customers, and the staff. SimPull runs the full session lifecycle from check-in through experience selection to launching Assetto Corsa on the right rig, then tracks, analyzes, and syncs everything across a network of Windows machines, online or off.",
-  status: "Actively developed",
+    "The sim-racing layer of the Hacktivist platform, between the rigs, the customers, and the staff. It runs the full session lifecycle from check-in through experience selection to launching Assetto Corsa or rFactor 2 on the right rig, then tracks, analyzes, and syncs everything across a network of Windows machines, online or off. Very few people have built a commercial launcher for these simulators.",
+  status: "Live at Hacktivist venues",
   tags: [
     "Vertical SaaS",
     "Distributed systems",
@@ -259,13 +259,13 @@ const simpull: CaseStudy = {
     "Stripe",
   ],
   stats: [
-    { label: "Tenancy", value: "Federated hub" },
+    { label: "Simulators", value: "AC + rF2" },
     { label: "Realtime", value: "WebSocket bus" },
     { label: "Resilience", value: "Offline-first" },
     { label: "Hardware", value: "Rig agents" },
   ],
   problem: {
-    lead: "Commercial sim racing venues have no purpose-built software. Most run manual workflows where a staff member physically walks to a rig to launch a game, or they bolt together generic booking tools that know nothing about the simulator. Every idle rig is lost revenue and every confused customer is churn. SimPull replaces that whole operational gap with one integrated system that still works when the internet does not.",
+    lead: "Commercial sim racing venues have no purpose-built software. Most run manual workflows where a staff member physically walks to a rig to launch a game, or they bolt together generic booking tools that know nothing about the simulator. Every idle rig is lost revenue and every confused customer is churn. Hacktivist Racing replaces that whole operational gap with one integrated system that still works when the internet does not.",
     friction: [
       { title: "Idle rigs burn revenue", body: "A bay sitting empty is unrecoverable. The session lifecycle has to be fast, self-service, and automatic." },
       { title: "Staff babysitting machines", body: "Manually launching and resetting games per customer is labor that should not exist. The system should do it." },
@@ -285,11 +285,11 @@ const simpull: CaseStudy = {
       { id: "server", label: "Venue Server", group: "service", x: 40, y: 48, detail: "Node and Express core with focused service modules for analytics, backups, licensing, content sync, and multiplayer." },
       { id: "ws", label: "WebSocket Bus", group: "service", x: 72, y: 48, detail: "Typed command messages flow from server to rigs, and live status flows back, in real time." },
       { id: "db", label: "SQLite", group: "data", x: 24, y: 70, detail: "Local better-sqlite3 persistence for sessions, leaderboard, drivers, staff, and config, with daily backups and 14-backup retention." },
-      { id: "agent", label: "Rig Agents", group: "hardware", x: 58, y: 70, detail: "A lightweight agent on each rig PC holds a persistent socket, launches and kills Assetto Corsa, and pulls content." },
-      { id: "ac", label: "Assetto Corsa", group: "hardware", x: 84, y: 70, detail: "The simulator process, launched into the right scenario and shut down on session end or booking expiry." },
+      { id: "agent", label: "Rig Agents", group: "hardware", x: 58, y: 70, detail: "A lightweight agent on each rig PC holds a persistent socket, launches and kills Assetto Corsa or rFactor 2, and pulls content." },
+      { id: "ac", label: "AC / rFactor 2", group: "hardware", x: 84, y: 70, detail: "The simulator process, Assetto Corsa or rFactor 2, launched into the right scenario and shut down on session end or booking expiry." },
       { id: "content", label: "Content Drive", group: "integration", x: 44, y: 91, detail: "An external drive of 600+ cars and tracks, zipped on demand and distributed to every rig over the network." },
       { id: "stripe", label: "Stripe", group: "integration", x: 18, y: 91, detail: "Payment gate in the kiosk flow over raw HTTPS, with no payment SDK in the dependency tree." },
-      { id: "simbook", label: "Simbook", group: "integration", x: 70, y: 91, detail: "Bidirectional handoff: Simbook checks the customer in, hands the tablet to SimPull, and reclaims it when booked time expires." },
+      { id: "booking", label: "Hacktivist Booking", group: "integration", x: 70, y: 91, detail: "Bidirectional handoff: the booking platform checks the customer in, hands the tablet to the racing kiosk, and reclaims it when booked time expires." },
     ],
     edges: [
       { from: "customers", to: "kiosk" },
@@ -304,11 +304,11 @@ const simpull: CaseStudy = {
       { from: "server", to: "content" },
       { from: "content", to: "agent" },
       { from: "server", to: "stripe" },
-      { from: "server", to: "simbook" },
+      { from: "server", to: "booking" },
     ],
     principles: [
       { title: "Hub and spoke with local autonomy", body: "Each venue runs standalone. Sessions launch, leaderboards persist, backups run, and licenses validate entirely offline. The central hub is additive telemetry, never a dependency." },
-      { title: "The rig agent as a command bus", body: "Each rig PC runs a lightweight agent on a persistent socket. The server sends typed commands and the agent owns the machine, launching and killing Assetto Corsa and pulling content. Adding a rig is install the agent and point it at the server." },
+      { title: "The rig agent as a command bus", body: "Each rig PC runs a lightweight agent on a persistent socket. The server sends typed commands and the agent owns the machine, launching and killing Assetto Corsa or rFactor 2 and pulling content. Adding a rig is install the agent and point it at the server." },
       { title: "Offline-first licensing", body: "HMAC-SHA256 keys encode venue, expiry, tier, and rig limit, validated with a shared secret and no network call. A trial mode with a two-rig limit means zero friction to start." },
       { title: "Content distribution without network shares", body: "The server zips content on demand with mtime-based caching and serves it over HTTP. Each rig pulls and extracts into the right paths, so sync works on any network with no configuration." },
       { title: "Multi-tenant by federation", body: "Venues register and send heartbeats to a stateless hub. Each venue owns its data, and the product company gets visibility across hundreds of installs from a small server." },
@@ -324,11 +324,11 @@ const simpull: CaseStudy = {
       { title: "The idle screen as a boundary", decision: "A blanking screen signals a rig is ready, then walks the customer from selection to session and back to idle.", why: "Clear state transitions make a self-service floor legible to a walk-up customer." },
       { title: "Trial mode with an upgrade path", decision: "Two rigs run with no license key, with a clear tier comparison built into the product.", why: "A venue can prove the value on its own setup before paying." },
       { title: "Last-admin delete protection", decision: "Staff accounts are role-based, and the system refuses to delete the final admin.", why: "It designs against a real failure mode: locking the whole venue out of its own tools." },
-      { title: "A shared-surface handoff with Simbook", decision: "The tablet moves from Simbook check-in to SimPull selection to an in-session dash and back, with defined callbacks.", why: "A real commercial partnership needs a protocol for who owns the screen, not a one-way webhook." },
+      { title: "A shared-surface handoff with booking", decision: "The tablet moves from booking check-in to racing selection to an in-session dash and back, with defined callbacks.", why: "A real commercial partnership needs a protocol for who owns the screen, not a one-way webhook." },
     ],
   },
   highlights: [
-    { tag: "Realtime", title: "Rig agent architecture", body: "Lightweight Node agents on each Windows PC hold persistent sockets, manage the Assetto Corsa process lifecycle, and respond to typed command messages. This is practical distributed systems work." },
+    { tag: "Realtime", title: "Rig agent architecture", body: "Lightweight Node agents on each Windows PC hold persistent sockets, manage the Assetto Corsa and rFactor 2 process lifecycle, and respond to typed command messages. This is practical distributed systems work." },
     { tag: "Resilience", title: "Offline-first by design", body: "Local SQLite, offline license validation, and standalone operation when the hub is unreachable. The venue keeps running when the connection does not." },
     { tag: "Orchestration", title: "Content distribution system", body: "An mtime-cached, pull-based pipeline zips 600+ cars and tracks on demand and extracts them on every rig, with per-rig progress and no network shares required." },
     { tag: "Architecture", title: "Federated multi-tenant hub", body: "Each venue phones home every 60 seconds to a stateless hub with an online and offline dashboard across all deployments, preserving each venue's autonomy." },
@@ -349,7 +349,7 @@ const simpull: CaseStudy = {
     judgment: [
       { title: "Architecture calls", body: "Federated hub over a cloud rewrite, offline keys over server validation, raw HTTPS over an SDK. These reflect a coherent offline-first philosophy." },
       { title: "Knowing the failure modes", body: "Designing for dropped connections, partial downloads, and a venue with no internet came from understanding real deployments." },
-      { title: "Product reasoning", body: "Experience-first UX, two kill conditions, and the Simbook handoff are product decisions, not generated requirements." },
+      { title: "Product reasoning", body: "Experience-first UX, two kill conditions, and the booking handoff are product decisions, not generated requirements." },
       { title: "Diagnosis over patching", body: "Port conflicts, a void-expression type error, and a clean-machine install bug were each traced to the underlying mechanism." },
     ],
   },
@@ -363,10 +363,10 @@ const simpull: CaseStudy = {
   ],
   roadmap: {
     status:
-      "Actively developed. The full system is built and deployable, with hardening and a second venue deployment as the next proof points.",
+      "Live at Hacktivist venues, launching races on Assetto Corsa and rFactor 2 rigs with no staff at the PC.",
     now: [
-      "Wire the Simbook integration end to end against a live API.",
-      "Deploy to a second venue to prove the federated model in practice.",
+      "Run races at Hacktivist venues, launched from the kiosk or by the Venue Ops agent.",
+      "Harden telemetry and fleet monitoring across sites.",
     ],
     next: [
       "Add end-to-end tests for the session lifecycle.",
@@ -382,8 +382,8 @@ const simpull: CaseStudy = {
 };
 
 export const caseStudies: Record<string, CaseStudy> = {
-  simbook,
-  simpull,
+  hacktivist,
+  "hacktivist-racing": hacktivistRacing,
 };
 
 export const groupColor: Record<NodeGroup, string> = {
